@@ -67,7 +67,20 @@ public class Solution {
 		}
 		return s.substring(start, end + 1);
 	}
-
+	
+	private int expendAndCompare(String s, final int left, final int right) {
+		int l = left;
+		int r = right;
+		while (l >= 0 && r < s.length()) {
+			if (s.charAt(l) != s.charAt(r)) {
+				break;
+			}
+			l--;
+			r++;
+		}
+		return r - l - 1;
+	}
+	
 	/**
 	 * 马拉车算法
 	 * @param s
