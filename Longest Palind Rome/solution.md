@@ -1,5 +1,13 @@
+# 最长回文子串
+## 暴力法
 
-public class Solution {
+遍历每个可能的字符串，如果字符串不相等则进行下一次遍历。
+
+* 时间复杂度：O(n^3)
+* 空间复杂度：O(1)
+
+
+``` java
 	/**
 	 * 字符串回文（暴力法）
 	 * 
@@ -33,7 +41,13 @@ public class Solution {
 		}
 		return ans;
 	}
+```
+## 对称法
+遍历每个字符串，由于回文左右对称的特性，通过判断当前字符左右是否相同即可。
+* 时间复杂度：O(n^2)
+* 空间复杂度：O(1)
 
+``` java
 	/**
 	 * 字符串回文（对称算法）
 	 * 
@@ -80,7 +94,13 @@ public class Solution {
 		}
 		return r - l - 1;
 	}
-	
+```
+## 马拉车算法
+
+[算法原理](https://articles.leetcode.com/longest-palindromic-substring-part-ii/)
+* 时间复杂度：O(n)
+
+``` java
 	/**
 	 * 马拉车算法
 	 * @param s
@@ -125,6 +145,4 @@ public class Solution {
 		}
 		return sb.toString();
 	}
-
-
-}
+```
